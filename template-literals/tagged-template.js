@@ -9,7 +9,7 @@
 * jsx`<a href="${url}">${text}</a>` // becomes React.DOM.a({ href: url }, text)
 
 * DSLs for code execution
-* var childProcess = sh`naveen ax | grep ${pid}`;
+* var childProcess = sh`ps ax | grep ${pid}`; 
 
 * Sanitize HTML for XSS attacks
 */
@@ -18,10 +18,10 @@
 let person = 'Mike';
 let age = 28;
 
-function sh(strings, personExp, ageExp) {
-  let str0 = strings[0]; // "That "
-  let str1 = strings[1]; // " is a "
-  let str2 = strings[2]; // "."
+function myTag(stringsArray, personExp, ageExp) {
+  let str0 = stringsArray[0]; // "That "
+  let str1 = stringsArray[1]; // " is a "
+  let str2 = stringsArray[2]; // "."
 
   let ageStr;
   if (ageExp > 99){
@@ -35,7 +35,7 @@ function sh(strings, personExp, ageExp) {
   return `${str0}${personExp}${str1}${ageStr}${str2}`;
 }
 
-let output = sh`That ${ person } is a ${ age }.`;
+let output = myTag`That ${ person } is a ${ age }.`;
 
 console.log("=>",output);
 console.log()
