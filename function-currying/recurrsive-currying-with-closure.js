@@ -12,7 +12,7 @@ function add(a) {
   };
 }
 
-let total = add(1)(10)(20)();
+let total = add(1)(10)(20)(20)(20)(20)(20)(20)(20)();
 console.log(total);
 
 let arrowAdd = a => b => {

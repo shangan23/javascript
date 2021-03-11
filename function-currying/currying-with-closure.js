@@ -3,11 +3,11 @@ Currying is a transformation of a function with multiple arguments into a sequen
 with a single argument. 
 */
 
-let multiply = function(x){
-    return function(y){
-        console.log(x*y)
-    }
-}
+let multiply = function(x) {
+  return function(y) {
+    return x * y;
+  };
+};
 
 let multiplyByTwo = multiply(2);
 multiplyByTwo(24);
