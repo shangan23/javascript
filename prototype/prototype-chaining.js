@@ -1,3 +1,12 @@
+/**
+ * Things to remember:
+ *  - agument: The process of creating property or methods or assigning object to prototype.
+ *  - side effect: While agumentating with another object the source object's construcutor will be overrided with agumented object.
+ *    So the constructor need to be reset with its own object.
+ *  - lookup : The process of searching the property in each objects 
+ *  - prototype chain: Look up process takes place in its parents 
+ */
+
 function Shape() {
   this.name = "Shape";
   this.toString = function() {
@@ -18,10 +27,10 @@ function Triangle(side, height) {
   };
 }
 
-console.log("Before Inheritance:-");
+console.log("Before Inheritance :-");
 console.log("Shape.prototype",Shape.prototype);
-console.log("TwoDShape.prototype ",TwoDShape.prototype); //Empty Object
-console.log("Triangle.Prototype",Triangle.prototype); //Empty Object
+console.log("TwoDShape.prototype ",TwoDShape.prototype); 
+console.log("Triangle.Prototype",Triangle.prototype); 
 
 //Augment
 //We can either Augment to the empty prototype object or completely
