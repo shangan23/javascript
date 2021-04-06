@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DOM manipulation closures usecase</title>
+    <style>
+      .container {
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">DOM manipulation Closures usecase</div>
+    <script type="text/javascript">
+      function getStyleManager(selector) {
+        const el = document.querySelector(selector)
+
+        if (el === null) {
+          throw new Error('Unable to select element')
+        }
+
+        const initialState = Object.assign({}, window.getComputedStyle(el))
+
+        return {
+          getInitialState: function (prop) {
+            return initialState[prop]
+          },
+          changeStyleProp: function (key, value) {
+            el.style[key] = value
+          },
+        }
+      }
+      
+      const log = console.log
+      const containerStyleManager = getStyleManager('.container')
+      log(containerStyleManager.getInitialState('fontSize')) // returns '12px'
+      log(containerStyleManager.changeStyleProp('fontSize', '24px')) // changes font size
+      log(containerStyleManager.getInitialState('fontSize')) // still returns // '12px'
+    </script>
+  </body>
+</html>
