@@ -16,6 +16,14 @@ ${country}
 `)
 }
 
+
+let collegeDetailsWithArgs = function(...args) {
+    console.log(`${this.name} located in ${this.city}, 
+${args[0]},
+${args[1]}
+`)
+}
+
 // Function borrowing with arguments are passed as an Array
 collegeDetails.apply(college1, ["Tamil Nadu","India"]);
-collegeDetails.apply(college2,["Karnataka","India"]);
+collegeDetailsWithArgs.apply(college2,["Karnataka","India"]);
