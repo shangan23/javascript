@@ -72,3 +72,6 @@ log(
   )
 )
 // ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+
+//fill array with 0
+log(Array.from({ length: 3 }, () => 0))
