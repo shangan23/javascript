@@ -75,3 +75,37 @@ log(
 
 //fill array with 0
 log(Array.from({ length: 3 }, () => 0))
+
+
+const json = {
+  name: "rama"
+}
+
+log(Array.from(JSON.stringify(json)))
+
+
+function squared(max){
+  return {
+    [Symbol.iterator](){
+      let n =0;
+      return {
+        next(){
+          n++
+          if(n<=max){
+            return {
+              value:n*n,
+              done:false
+            }
+          }else{
+            return {
+              value:undefined,
+              done:true
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+log(Array.from(squared(10)))
