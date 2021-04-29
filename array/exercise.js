@@ -32,9 +32,61 @@ log(
   people.reduce(function (acc, obj) {
     let key = obj[groupByKey]
     if (!acc[key]) {
-        acc[key] = []
+      acc[key] = []
     }
     acc[key].push(obj)
     return acc
   }, {})
+)
+/**
+ * Sorting
+ */
+
+let royalFamily = [
+  {
+    name: 'rama',
+    age: '45',
+  },
+  {
+    name: 'krishna',
+    age: '80',
+  },
+  {
+    name: 'bishma',
+    age: '145',
+  },
+  {
+    name: 'arujuna',
+    age: '65',
+  },
+]
+
+console.log(
+  'royalFamily by name',
+  royalFamily.sort((a, b) => {
+    a = a.name.toUpperCase()
+    b = b.name.toUpperCase()
+    if (a < b) {
+      return -1
+    } else if (a > b) {
+      return 1
+    }
+    return 0
+    //return a.name - b.name
+  })
+)
+
+let plainArray = ['rama', 'Krishna', 'arjuna', 'bhisma', 10, 5, 8]
+console.log(
+  'plainArray',
+  plainArray.sort((a, b) => {
+    if (typeof a === 'string') a = a.toUpperCase()
+    if (typeof b === 'string') b = b.toUpperCase()
+    if (a < b) {
+      return -1
+    } else if (a > b) {
+      return 1
+    }
+    return 0
+  })
 )
