@@ -1,12 +1,18 @@
 /**
  * The sort() method sorts the elements of an array in place and returns the sorted array.
  * The default sort order is ascending, built upon converting the elements into strings,
- * then comparing their sequences of UTF-16 code units values.
+ * then comparing their sequences of UTF-16 code units values. 
+ * 
+ * Internally uses Three-way-comparission (a<b => -1, a>b => 1, a=b => 0)
+ * https://en.wikipedia.org/wiki/Three-way_comparison
  */
 
 const months = ['March', 'Jan', 'Feb', 'Dec']
 months.sort()
 console.log(months) // expected output: Array ["Dec", "Feb", "Jan", "March"]
+
+//decoding it's internal working
+months.forEach(month => console.log(month, '-' , month.charCodeAt()))
 
 const array1 = [1, 30, 4, 21, 100000]
 array1.sort()
