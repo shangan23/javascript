@@ -22,5 +22,5 @@ console.log(myMood);
 //Promise { <pending> }
 //Then Fullfilled
 //Catch Rejected
-myMood.then(happy => console.log(happy))
-      .catch(depressed => console.log(depressed));
+myMood.then(happy => console.log(happy))  //Prints "I am Happy very very Happy!!!"
+      .catch(depressed => console.log(depressed));  //Prints "I am depressed for the whole week!!"
