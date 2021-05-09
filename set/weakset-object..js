@@ -4,7 +4,6 @@
   The major advantage of using a WeakSet over a Set is memory benefits.
 */
 
-
 const weakset = new WeakSet();
 
 //weakset.add('message', 'helloworld');
