@@ -1,7 +1,9 @@
 // Map Object
-// Allows both object(key,values) and primitive data type
-// Have Size method which is not there in Object
-
+/* Allows both object(key,values) and primitive data type
+   Have Size method which is not there in Object
+   Preserves Insertion order
+   Iterable
+*/
 let map = new Map();
 console.log(map); // Map(0) {}
 
